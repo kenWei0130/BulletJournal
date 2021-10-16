@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BulletJournal.Models;
+using BulletJournal.Services;
+using BulletJournal.Services.ServicesImpl;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -31,6 +33,7 @@ namespace BulletJournal
                 options.UseNpgsql(Configuration.GetConnectionString("MyPostgresConnection"));
             });
 
+            services.AddTransient<ITodoService, TodoService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

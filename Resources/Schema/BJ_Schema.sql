@@ -13,6 +13,13 @@ CREATE TABLE IF NOT EXISTS BJ_TODO (
     WorkTargetID integer 
 );
 
+insert into bj_todo(WorkTitle, Description, TargetDate) values('測試待辦一', '', '20211020');
+insert into bj_todo(WorkTitle, Description, TargetDate) values('測試待辦二', '', '20211020');
+insert into bj_todo(WorkTitle, Description, TargetDate) values('測試待辦三', '', '20211021');
+insert into bj_todo(WorkTitle, Description, TargetDate) values('測試待辦四', '', '20211021');
+insert into bj_todo(WorkTitle, WorkRankId, TargetDate) values('測試待辦五', '5', '20211021');
+insert into bj_todo(WorkTitle, WorkRankId, TargetDate) values('測試待辦六', '1', '20211021');
+
 CREATE TABLE IF NOT EXISTS BJ_WorkRank(
     ID CHAR(1) PRIMARY KEY NOT NULL,
     RankName varchar(10) not null default ''

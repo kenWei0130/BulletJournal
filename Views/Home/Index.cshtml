@@ -1,7 +1,36 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿
+@model IEnumerable<BulletJournal.Models.ViewModel.ViewBjTodo> 
+
+@{
+    ViewData["Title"] = "Today Work Sheet";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Hello MyGithub</h1>
+    <h1 class="display-4">TODO</h1>
 </div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Worktitle)</th>
+            <th>@Html.DisplayNameFor(model => model.Workrank)</th>
+            <th>@Html.DisplayNameFor(model => model.Targetdate)</th>
+            <th>@Html.DisplayNameFor(model => model.Iscompleted)</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach(var item in Model)
+{
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.Worktitle)</td>
+            <td>@Html.DisplayFor(modelItem => item.Workrank)</td>
+            <td>@Html.DisplayFor(modelItem => item.Targetdate)</td>
+            <td>@Html.DisplayFor(modelItem => item.Iscompleted)</td>
+            <td>
+                <button type="button" class="btn btn-success">完成</button>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

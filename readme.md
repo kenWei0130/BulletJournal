@@ -64,3 +64,8 @@
     CREATE SEQUENCE IF NOT EXISTS SEQ_BJ_TODO_ID START 1;
 - 成就目標序列 SEQ_BJ_WORK_TARGET_ID
     CREATE SEQUENCE IF NOT EXISTS SEQ_BJ_WORK_TARGET_ID START 1;
+
+## 記錄遇到的問題
+- 2021.10.16 
+    - 畫面上沒必要顯示所有資料庫的欄位，這部分應該怎麼規劃處理。
+    - EF 產生的 Context 應該是屬於什麼

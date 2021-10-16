@@ -6,21 +6,24 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using BulletJournal.Models;
+using BulletJournal.Services;
 
 namespace BulletJournal.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ITodoService _todoService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ITodoService todoService)
         {
             _logger = logger;
+            _todoService = todoService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            return View(await _todoService.TodayTodoListAsync());
         }
 
         public IActionResult Privacy()
