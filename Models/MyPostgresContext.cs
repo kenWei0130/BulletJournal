@@ -1,4 +1,5 @@
 ﻿using System;
+using BulletJournal.Models.DAO;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 

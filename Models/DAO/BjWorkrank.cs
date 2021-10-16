@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 #nullable disable
 
-namespace BulletJournal.Models
+namespace BulletJournal.Models.DAO
 {
     public partial class BjWorkrank
     {
